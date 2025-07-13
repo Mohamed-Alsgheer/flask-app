@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+    <link rel="stylesheet" href="/static/styles/createBook.css">
+    <link rel="stylesheet" href="/static/styles/viewBook.css">
+</head>
+<body>
+    <div class="book-details">
+        <h1>{{ book.title }}</h1>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Published Year:</strong> {{ book.year }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+    </div>
+</body>
+</html>
