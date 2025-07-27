@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Set the database path relative to the project root
 DATABASE = os.path.join(os.getcwd(), 'database.db')
 
+
 # we want to create, update, delete, and read books 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
