@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url('/static/images/creative-composition-with-different-books.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add this */
+    overflow: hidden;   /* Optional: ensures overlay stays inside */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons-container a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+.buttons-container a:hover {
+    background: none;
+}

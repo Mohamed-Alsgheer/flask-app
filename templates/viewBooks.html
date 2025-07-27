@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="/static/styles/viewBooks.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Books</h1>
+        <a href="/createBook" class="add-btn">+ Add New Book</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>
+                        <a href="/viewBook/{{ book.id }}" class="book-link">
+                            {{ book.title }}
+                        </a>
+                    </td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                    <td>
+                        <a href="/updateBook/{{ book.id }}" class="action-link">Edit</a>
+                        <form action="/deleteBook/{{ book.id }}" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
